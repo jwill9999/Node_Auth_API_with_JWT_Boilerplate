@@ -1,5 +1,5 @@
 {
-  "name": "authapi",
+  "name": "node_auth_api_with_jwt_boilerplate",
   "version": "1.0.0",
   "private": true,
   "scripts": {
