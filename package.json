@@ -1,10 +1,14 @@
 {
   "name": "authapi",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
     "dev": " start http://localhost:3000 & nodemon ./bin/www "
+  },
+  "author": {
+    "name": "Jason Williams",
+    "email": "jwill9999@icloud.com"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
@@ -23,5 +27,9 @@
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jwill9999/Node_Auth_API_with_JWT_Boilerplate.git"
   }
 }
