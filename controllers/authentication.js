@@ -1,6 +1,6 @@
 const User = require('../models/user');
 const jwt = require('jwt-simple');
-const JWT_SECRET = require('../.configuration');
+const JWT_SECRET = require('../configuration');
 
 
 //create jwt-token and set subject, timestamp and secret
@@ -46,7 +46,7 @@ exports.signup = (req, res, next) => {
             if (err) {
                 return next(err);
             }
-            res.send({ Web_token: createJwtToken(user) });
+            res.send({ JWT_Web_token: createJwtToken(user) });
         });
 
     });

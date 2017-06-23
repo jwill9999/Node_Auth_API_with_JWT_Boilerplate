@@ -4,10 +4,28 @@
 > git clone https://github.com/jwill9999/Node_Auth_API_with_JWT_Boilerplate.git
 > cd Node_Auth_API_with_JWT_Boilerplate
 > npm install
+> connect to your database first then
 > npm run dev
-> This will open automatically on http://localhost:3000
-
+> Server is run on port 3000
 ```
+## API Endpoints
+
+> /signin
+
+> web_token POST in header as authorization key 
+
+> /signup
+
+> web_token returned as json object to user 
+
+
+## Additional setup
+
+> connect a Mongodb database prior to running the API server
+
+> Create key value pair :- at the root of file system create a configuration.js file and export an ID key with a random string value as the JWT Secret.
+
+
 
 ## Key Features
 

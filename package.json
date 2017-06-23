@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": " start http://localhost:3000 & nodemon ./bin/www "
+    "dev": "nodemon ./bin/www"
   },
   "author": {
     "name": "Jason Williams",
