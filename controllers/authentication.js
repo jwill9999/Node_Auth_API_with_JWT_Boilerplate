@@ -12,7 +12,7 @@ function createJwtToken(user) {
 
 //authorized just need to issue a jwt_token
 exports.signin = (req, res, next) => {
-    res.send({ web_token: createJwtToken(req.user) })
+    res.send({ jwt_web_token: createJwtToken(req.user) })
 }
 
 exports.signup = (req, res, next) => {
@@ -46,7 +46,7 @@ exports.signup = (req, res, next) => {
             if (err) {
                 return next(err);
             }
-            res.send({ JWT_Web_token: createJwtToken(user) });
+            res.send({ jwt_web_token: createJwtToken(user) });
         });
 
     });
