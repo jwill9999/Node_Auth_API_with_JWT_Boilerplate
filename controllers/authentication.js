@@ -21,6 +21,7 @@ exports.signup = (req, res, next) => {
 
     if (!email || !password) {
         return res.status(422).send({ error: 'Email and Password are required' })
+        
     }
 
     /****************add email validation********************/
@@ -34,9 +35,8 @@ exports.signup = (req, res, next) => {
 
         //if email already exists return error message
         if (existingUser) {
-            return res.status(422).send({ error: 'Email already exists' })
+            return res.send(422, { error: 'Email already exists' })
         }
-
         //if new user create new User and return JWT_TOKEN 
         const user = new User({
             email: email,

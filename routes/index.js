@@ -10,8 +10,8 @@ const AuthGuard = passport.authenticate('jwt', { session: false });
 const local_Login = passport.authenticate('local', { session: false });
 
 /* GET '/'  */
-router.get('/',  function (req, res, next) {
-  res.send('Working ok ');
+router.get('/', AuthGuard, function (req, res, next) {
+  res.send({message: 'Protected AuthGuard route'});
 });
 
 /* POST signup. */
