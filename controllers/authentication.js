@@ -1,12 +1,12 @@
 const User = require('../models/user');
 const jwt = require('jwt-simple');
-const JWT_SECRET = require('../configuration');
+
 
 
 //create jwt-token and set subject, timestamp and secret
 function createJwtToken(user) {
     const timestamp = new Date().getDate();
-    return jwt.encode({ sub: user.id, iat: timestamp }, JWT_SECRET.ID)
+    return jwt.encode({ sub: user.id, iat: timestamp }, process.env.JWT_SECRET)
 };
 
 

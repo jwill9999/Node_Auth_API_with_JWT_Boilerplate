@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 
+//required for npm module dotenv to work
+require('dotenv/config');
+require('./www');
+
 /**
  * Module dependencies.
  */

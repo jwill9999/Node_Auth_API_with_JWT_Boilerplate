@@ -1,6 +1,6 @@
 const passport = require('passport');
 const User = require('../models/user');
-const JWT_SECRET = require('../configuration');
+
 const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 
@@ -8,7 +8,7 @@ const ExtractJwt = require('passport-jwt').ExtractJwt;
 //Options for jwt_strategy note key in header for token is authorization
 const JwtOptions = {
     jwtFromRequest: ExtractJwt.fromHeader('authorization'),
-    secretOrKey: JWT_SECRET.ID
+    secretOrKey: process.env.JWT_SECRET
 };
 
 //Passport_jwt strategy 1. create new strategy 2. supply options as above 3.find user by sub which is user.id 

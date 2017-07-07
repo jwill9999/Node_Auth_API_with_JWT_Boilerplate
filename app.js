@@ -4,7 +4,7 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const Now = require('./mymiddleware');
+
 const Cors = require('cors');
 
 const index = require('./routes/index');
@@ -12,10 +12,10 @@ const users = require('./routes/users');
 
 const mongoose = require('mongoose');
 
-/************************db setup*********************************/
-/********add and replace your own database connection here********/
-/*****************************************************************/
-mongoose.connect('mongodb://localhost:auth/authorization');  
+/************************db setup***********************************************/
+/********add and replace your own database connection here in .env file ********/
+/*******************************************************************************/
+mongoose.connect(process.env.DATABASE_CONNECTION);  
 
 
 const app = express();
@@ -29,7 +29,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(Now);
 app.use(Cors());
 
 app.use('/', index);
