@@ -15,7 +15,15 @@ const mongoose = require('mongoose');
 /************************db setup***********************************************/
 /********add and replace your own database connection here in .env file ********/
 /*******************************************************************************/
-mongoose.connect(process.env.DATABASE_CONNECTION);  
+
+mongoose.Promise = global.Promise;
+try {
+  mongoose.connect(process.env.DATABASE_CONNECTION);
+  console.log('Connected to Mongodb :- DataBase listening on Port 27017');
+} catch(e){
+  console.log('ERROR :- Could not connect to your MongoDb DataBase');
+}
+ 
 
 
 const app = express();
