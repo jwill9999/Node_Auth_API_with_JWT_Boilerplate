@@ -11,7 +11,7 @@ const local_Login = passport.authenticate('local', { session: false });
 
 /* GET '/'  */
 router.get('/', AuthGuard, function (req, res, next) {
-  res.send({message: 'Protected AuthGuard route'});
+  res.send({message: 'This is Data Protected by JSON Web Token coming from the AuthGuard route'});
 });
 
 /* POST signup. */

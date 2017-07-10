@@ -23,7 +23,13 @@
 
 > connect a Mongodb database prior to running the API server
 
-> Create key value pair :- at the root of file system create a configuration.js file and export an ID key with a random string value as the JWT Secret.
+> environmental variables should be declared in a .env file
+
+> The two variables you should declare are
+
+> JWT_SECRET
+
+> DATABASE_CONNECTION
 
 
 
@@ -57,5 +63,7 @@
 [MongoDb Docs](https://docs.mongodb.com/manual/)
 
 [Bcrypt for nodejs](https://github.com/shaneGirish/bcrypt-nodejs)
+
+[Dotenv Documentation](https://www.npmjs.com/package/dotenv)
 
 
