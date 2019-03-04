@@ -3,6 +3,7 @@
 <div align="center">
 <img src="./assets/images/auth.png" />
 </div>
+
 ```
 > git clone https://github.com/jwill9999/Node_Auth_API_with_JWT_Boilerplate.git
 > cd Node_Auth_API_with_JWT_Boilerplate
