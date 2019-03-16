@@ -28,9 +28,7 @@
     "passport-local": "^1.0.0",
     "serve-favicon": "~2.4.2"
   },
-  "devDependencies": {
-    
-  },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/jwill9999/Node_Auth_API_with_JWT_Boilerplate.git"

@@ -17,13 +17,17 @@ const mongoose = require('mongoose');
 /*******************************************************************************/
 
 mongoose.Promise = global.Promise;
-try {
-  mongoose.connect(process.env.DATABASE_CONNECTION);
-  console.log('Connected to Mongodb :- DataBase listening on Port 27017');
-} catch(e){
-  console.log('ERROR :- Could not connect to your MongoDb DataBase');
-}
- 
+
+
+/**
+ * Mongoose Database connection
+ * @params connection {string}
+ * @returns {promise} 
+ */
+mongoose.connect(process.env.DATABASE_CONNECTION, { userNewUrlParser: true }).then(
+	() => { console.log("\x1b[32m%s\x1b[0m", 'Connected to Mongodb :- DataBase listening on Port 27017'); },
+	err => { console.log("\x1b[31m%s\x1b[0m", 'ERROR :- Could not connect to your MongoDb DataBase', err); }
+);
 
 
 const app = express();
@@ -44,20 +48,20 @@ app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-  let err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+	let err = new Error('Not Found');
+	err.status = 404;
+	next(err);
 });
 
 // error handler
 app.use(function (err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+	// set locals, only providing error in development
+	res.locals.message = err.message;
+	res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+	// render the error page
+	res.status(err.status || 500);
+	res.render('error');
 });
 
 module.exports = app;
